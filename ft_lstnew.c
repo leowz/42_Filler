@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/11 15:38:11 by zweng             #+#    #+#             */
-/*   Updated: 2017/11/13 15:15:29 by zweng            ###   ########.fr       */
+/*   Created: 2017/11/11 18:12:06 by zweng             #+#    #+#             */
+/*   Updated: 2017/11/11 18:32:40 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	pft_aux(int n, char **str)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	int		digit;
+	t_list	*node;
 
-	digit = n % 10 > 0 ? n % 10 : -(n % 10);
-	if (n <= -10 || n >= 10)
-		pft_aux(n / 10, str);
-	**str = '0' + digit;
-	(*str)++;
-}
-
-char		*ft_itoa(int n)
-{
-	char	*ret;
-	char	buf[12];
-	char	*sp;
-
-	ret = 0;
-	sp = buf;
-	if (n < 0)
-		*sp++ = '-';
-	pft_aux(n, &sp);
-	*(sp++) = 0;
-	ret = ft_strdup(buf);
-	return (ret);
+	node = 0;
+	if ((node = (t_list *)malloc(sizeof(t_list))))
+	{
+		node->content = 0;
+		node->content_size = 0;
+		node->next = 0;
+		if (content && (node->content = malloc(content_size)))
+		{
+			ft_memcpy(node->content, content, content_size);
+			node->content_size = content_size;
+		}
+	}
+	return (node);
 }

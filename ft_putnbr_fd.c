@@ -6,13 +6,13 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/11 17:47:17 by zweng             #+#    #+#             */
-/*   Updated: 2017/11/11 17:53:33 by zweng            ###   ########.fr       */
+/*   Updated: 2017/11/13 15:15:42 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	pft_nbr(int n, int fd)
+static void	pft_nbr(int n, int fd)
 {
 	int		digit;
 	char	c;
@@ -24,7 +24,7 @@ void	pft_nbr(int n, int fd)
 	write(fd, &c, 1);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void		ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 		write(fd, "-", 1);

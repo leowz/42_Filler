@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/11 15:38:11 by zweng             #+#    #+#             */
-/*   Updated: 2017/11/13 15:15:29 by zweng            ###   ########.fr       */
+/*   Created: 2017/11/13 13:02:04 by zweng             #+#    #+#             */
+/*   Updated: 2017/11/13 15:09:12 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	pft_aux(int n, char **str)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int		digit;
-
-	digit = n % 10 > 0 ? n % 10 : -(n % 10);
-	if (n <= -10 || n >= 10)
-		pft_aux(n / 10, str);
-	**str = '0' + digit;
-	(*str)++;
-}
-
-char		*ft_itoa(int n)
-{
-	char	*ret;
-	char	buf[12];
-	char	*sp;
+	t_list	*ret;
 
 	ret = 0;
-	sp = buf;
-	if (n < 0)
-		*sp++ = '-';
-	pft_aux(n, &sp);
-	*(sp++) = 0;
-	ret = ft_strdup(buf);
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		ft_lstappend(&ret, f(lst));
+		lst = lst->next;
+	}
 	return (ret);
 }

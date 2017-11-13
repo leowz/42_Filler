@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/11 15:38:11 by zweng             #+#    #+#             */
-/*   Updated: 2017/11/13 15:15:29 by zweng            ###   ########.fr       */
+/*   Created: 2017/11/11 18:04:47 by zweng             #+#    #+#             */
+/*   Updated: 2017/11/11 18:34:04 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	pft_aux(int n, char **str)
+char	*ft_strrev(char const *s)
 {
-	int		digit;
+	char	*fp;
+	char	*tp;
 
-	digit = n % 10 > 0 ? n % 10 : -(n % 10);
-	if (n <= -10 || n >= 10)
-		pft_aux(n / 10, str);
-	**str = '0' + digit;
-	(*str)++;
-}
-
-char		*ft_itoa(int n)
-{
-	char	*ret;
-	char	buf[12];
-	char	*sp;
-
-	ret = 0;
-	sp = buf;
-	if (n < 0)
-		*sp++ = '-';
-	pft_aux(n, &sp);
-	*(sp++) = 0;
-	ret = ft_strdup(buf);
-	return (ret);
+	if (!s)
+		return (0);
+	fp = (char *)s;
+	tp = ft_strlastchrp(s);
+	while (fp > tp)
+	{
+		if (*fp != *tp)
+		{
+			*fp = (*fp) ^ (*tp);
+			*tp = (*tp) ^ (*fp);
+			*fp = (*fp) ^ (*tp);
+		}
+		fp++;
+		tp--;
+	}
+	return ((char *)s);
 }

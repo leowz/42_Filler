@@ -6,18 +6,18 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/11 13:37:45 by zweng             #+#    #+#             */
-/*   Updated: 2017/11/11 14:39:10 by zweng            ###   ########.fr       */
+/*   Updated: 2017/11/13 15:16:49 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		pft_iswhitespace(char c)
+static int		pft_iswhitespace(char c)
 {
 	return (c == ' ' || c == '\n' || c == '\t' || c == '\v');
 }
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	char const	*fp;
 	char const	*sp;

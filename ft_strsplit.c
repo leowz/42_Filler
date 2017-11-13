@@ -6,16 +6,16 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/11 14:39:52 by zweng             #+#    #+#             */
-/*   Updated: 2017/11/11 15:37:26 by zweng            ###   ########.fr       */
+/*   Updated: 2017/11/13 15:17:16 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		pft_count_word(char const *s, char c)
+static int		pft_count_word(char const *s, char c)
 {
-	int		counted;
-	int		ret;
+	int			counted;
+	int			ret;
 
 	counted = 0;
 	ret = 0;
@@ -33,7 +33,7 @@ int		pft_count_word(char const *s, char c)
 	return (ret);
 }
 
-char	*pft_next_word(char const **s, char c)
+static char		*pft_next_word(char const **s, char c)
 {
 	char const	*tp;
 	char		*ret;
@@ -48,11 +48,11 @@ char	*pft_next_word(char const **s, char c)
 	return (ret);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	char	**ret;
-	char	**tp;
-	int		word_count;
+	char		**ret;
+	char		**tp;
+	int			word_count;
 
 	if (!s)
 		return (0);
