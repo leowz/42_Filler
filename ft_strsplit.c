@@ -41,7 +41,7 @@ static char		*pft_next_word(char const **s, char c)
 	while (**s == c)
 		(*s)++;
 	tp = *s;
-	while (*tp != c)
+	while (*tp && *tp != c)
 		tp++;
 	ret = ft_strsub(*s, 0, tp - *s);
 	*s = tp;

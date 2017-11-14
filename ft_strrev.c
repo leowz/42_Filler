@@ -21,7 +21,7 @@ char	*ft_strrev(char const *s)
 		return (0);
 	fp = (char *)s;
 	tp = ft_strlastchrp(s);
-	while (fp > tp)
+	while (fp < tp)
 	{
 		if (*fp != *tp)
 		{
