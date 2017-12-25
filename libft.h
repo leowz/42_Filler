@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 11:44:47 by zweng             #+#    #+#             */
-/*   Updated: 2017/11/13 14:26:33 by zweng            ###   ########.fr       */
+/*   Updated: 2017/12/25 13:52:04 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+
+# define ABS(x) (x < 0 ? -x : x)
 
 typedef struct		s_list
 {
@@ -69,6 +71,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
+char				*ft_itoa_base(long long int n, int base);
 char				*ft_itoa(int n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
