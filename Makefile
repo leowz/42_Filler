@@ -6,7 +6,7 @@
 #    By: zweng <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 18:11:43 by zweng             #+#    #+#              #
-#    Updated: 2018/01/05 15:40:59 by zweng            ###   ########.fr        #
+#    Updated: 2018/01/05 18:24:32 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBDIR = libft
 
 LIB = libft.a
 
-SRCS = 
+SRCS = filler.c
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
@@ -43,10 +43,10 @@ EOC:="\033[0;0m"
 all: $(NAME)
 
 $(NAME): $(LIBDIR)/$(LIB) $(OBJS)
-	@$(CC) $(OBJS) -L$(LIBDIR) -l:$(LIB) -o $@
+	@$(CC) $(OBJS) -L$(LIBDIR)/ -lft -o $@
 
 $(LIBDIR)/$(LIB): $(LIBSRCS)
-	@make -C libft/ fclean && make -C libft/
+	@make -C $(LIBDIR)/ fclean && make -C $(LIBDIR)/
 
 %.o: %.c
 	@$(CC) -c $(CFLAGS) $^ -I. -I$(HEADER_DIR) -o $@
