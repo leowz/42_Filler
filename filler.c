@@ -6,18 +6,23 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 15:52:01 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/05 18:40:50 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/05 18:54:28 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-int		main(void)
+static void fl_get_input(void)
 {
 	char	*line;
-	int		ret;
-	
-	
 
+	line = 0;
+	get_next_line(0, &line);
+
+}
+
+int		main(void)
+{
+	fl_get_input();	
 }
 
