@@ -6,12 +6,11 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:23:05 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 18:10:13 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/08 18:12:50 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-#include "helper.h"
 #include <limits.h>
 
 static int	pf_bigger(int a, int b)

@@ -6,12 +6,11 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 20:14:51 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 17:59:19 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/08 18:12:43 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-#include "helper.h"
 
 static int	pf_get_board_info(t_board *bd)
 {

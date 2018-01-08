@@ -6,12 +6,11 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 13:50:34 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 18:04:26 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/08 18:12:56 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-#include "helper.h"
 
 static void	pf_init_hotmap(t_board *bd, int player)
 {
