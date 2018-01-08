@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 15:52:01 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 15:52:47 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/08 18:03:44 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	pf_output_result(t_point res)
 	ft_putstr("\n");
 }
 
-static int 	pf_get_player(void)
+static int	pf_get_player(void)
 {
 	char	*line;
 	int		ret;
@@ -40,7 +40,7 @@ static int 	pf_get_player(void)
 	line = 0;
 	ret = 0;
 	get_next_line(STD_IN, &line);
-	if (line && ft_strstr(line, "$$$ exec"))
+	if (line && ft_strstr(line, "$$$ exec") && ft_strstr(line, "zweng.filler"))
 	{
 		if (ft_strstr(line, "p1"))
 			ret = 1;
@@ -66,16 +66,19 @@ int			main(void)
 	t_board	board;
 	t_board piece;
 	int		val;
-	
+
 	pf_init_board(&board);
 	pf_init_board(&piece);
 	if (!(player = pf_get_player()))
 		return (1);
 	while (1)
 	{
-		fl_get_board(&board);
-		fl_get_piece(&piece);
-		val= fl_resolve(&board, &piece, player, &res);
+		val = 0;
+		val += fl_get_board(&board);
+		val += fl_get_piece(&piece);
+		if (val != 2)
+			return (1);
+		val = fl_resolve(&board, &piece, player, &res);
 		pf_output_result(res);
 		pf_free_board(&piece);
 		if (val == 1)

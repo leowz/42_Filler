@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 15:52:10 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 13:52:46 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/08 17:58:53 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "get_next_line.h"
 
 # define BD_CHARS ".oOxX"
-# define STD_IN   (0)	
+# define STD_IN   (0)
 # define C_PL(x)  (x == 1 ? 'O' : 'X')
 # define C_EM(x)  (x == 1 ? 'X' : 'O')
 # define C_P1    'O'

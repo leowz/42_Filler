@@ -6,12 +6,11 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 13:51:27 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 14:52:24 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/08 18:04:41 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-#include "helper.h"
 
 static int	pf_get_board_info(t_board *bd)
 {
@@ -64,7 +63,7 @@ static void	pf_init_board_row(t_board *bd, int i)
 	}
 }
 
-int		fl_get_board(t_board *bd)
+int			fl_get_board(t_board *bd)
 {
 	char	*line;
 	int		i;
@@ -76,20 +75,13 @@ int		fl_get_board(t_board *bd)
 		return (0);
 	}
 	if (get_next_line(STD_IN, &line))
-	{
-	//	printf("skip one line\n");
 		free(line);
-	}
 	if (bd->board == 0)
 		pf_alloc_board_map(bd);
-	//printf("board size %d %d\n", bd->height, bd->width);
 	while (i < bd->height)
 	{
 		pf_init_board_row(bd, i);
 		i++;
 	}
-	//printf("get board\n");
-	//print_board(*bd);
 	return (1);
 }
-

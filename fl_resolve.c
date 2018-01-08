@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 13:50:34 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 15:52:56 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/08 18:04:26 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,9 @@ static void	pf_init_hotmap(t_board *bd, int player)
 int			fl_resolve(t_board *bd, t_board *piece, int player, t_point *res)
 {
 	int		ret;
+
 	pf_init_hotmap(bd, player);
-	//print_hotmap(*bd);
 	fl_calc_hotmap(bd);
-	//print_board(*bd);
-	//printf("\n");
-	//print_hotmap(*bd);
 	ret = fl_put_piece(bd, piece, res);
 	if (ret == 1)
 	{
