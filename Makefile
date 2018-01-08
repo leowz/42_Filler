@@ -6,7 +6,7 @@
 #    By: zweng <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 18:11:43 by zweng             #+#    #+#              #
-#    Updated: 2018/01/05 18:24:32 by zweng            ###   ########.fr        #
+#    Updated: 2018/01/07 20:18:47 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBDIR = libft
 
 LIB = libft.a
 
-SRCS = filler.c
+SRCS = filler.c fl_get.c fl_resolve.c fl_hotmap.c helper.c fl_get_piece.c
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
