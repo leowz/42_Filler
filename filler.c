@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 15:52:01 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 18:03:44 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/08 18:38:03 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ static void	pf_free_board(t_board *board)
 	while (i < board->height)
 		free(board->board[i++]);
 	free(board->board);
+	if (board->hotmap)
+	{
+		i = 0;
+		while (i < board->height)
+			free(board->hotmap[i++]);
+		free(board->hotmap);
+	}
 	board->width = 0;
 	board->height = 0;
 }
