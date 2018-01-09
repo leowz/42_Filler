@@ -6,11 +6,16 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 13:37:51 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 18:02:42 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/09 20:20:12 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	pf_abs(int nbr)
+{
+	return (nbr < 0 ? -nbr : nbr);
+}
 
 static void	ft_aux(long long int val, int base, char **p)
 {
@@ -21,7 +26,7 @@ static void	ft_aux(long long int val, int base, char **p)
 	if (val >= base || val <= -base)
 		ft_aux(val / base, base, p);
 	tmp = (int)(val % base);
-	*(*p)++ = *(base_str + ABS(tmp));
+	*(*p)++ = *(base_str + pf_abs(tmp));
 }
 
 char		*ft_itoa_base(long long int value, int base)

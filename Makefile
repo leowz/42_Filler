@@ -6,7 +6,7 @@
 #    By: zweng <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 18:11:43 by zweng             #+#    #+#              #
-#    Updated: 2018/01/08 18:25:01 by zweng            ###   ########.fr        #
+#    Updated: 2018/01/09 16:58:34 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ LIBSRCS = $(wildcard libft/*.c)
 LIBOBJS = $(patsubst %.c, %.o, $(LIBSRCS))
 
 HEADER_DIR = libft
+
+HEADER = filler.h
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -49,19 +51,20 @@ $(NAME): $(LIBDIR)/$(LIB) $(OBJS)
 $(LIBDIR)/$(LIB): $(LIBSRCS)
 	@make -C $(LIBDIR)/ fclean && make -C $(LIBDIR)/
 
-%.o: %.c
+%.o: %.c $(HEADER)
 	@echo $(GREEN)"Compiling"$(EOC)
-	@$(CC) -c $(CFLAGS) $^ -I. -I$(HEADER_DIR) -o $@
+	@$(CC) -c $(CFLAGS) $< -I. -I$(HEADER_DIR) -o $@
 	@echo $(GREEN)"Finish compiling"$(EOC)
 
 clean:
 	@/bin/rm -f $(OBJS) 
-	@make -C libft/ clean
+	@make -C $(LIBDIR)/ clean
 
 fclean: clean
-	@/bin/rm -f $(NAME) $(OBJS) $(LIB)
-	@make -C libft/ fclean
+	@/bin/rm -f $(NAME)
+	@make -C $(LIBDIR)/ fclean
 
-re: fclean all
+re: fclean
+	@make
 
-.PHONY:clean fclean all
+.PHONY: clean fclean all

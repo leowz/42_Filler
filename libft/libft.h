@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 11:44:47 by zweng             #+#    #+#             */
-/*   Updated: 2017/12/25 13:52:04 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/09 15:21:28 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-
-# define ABS(x) (x < 0 ? -x : x)
 
 typedef struct		s_list
 {

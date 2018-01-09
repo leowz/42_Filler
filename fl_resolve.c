@@ -6,11 +6,21 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 13:50:34 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 18:12:56 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/09 20:18:22 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
+
+static char	pf_ennemy_char(int player)
+{
+	return (player == 2 ? 'O' : 'X');
+}
+
+static char	pf_player_char(int player)
+{
+	return (player == 1 ? 'O' : 'X');
+}
 
 static void	pf_init_hotmap(t_board *bd, int player)
 {
@@ -25,11 +35,11 @@ static void	pf_init_hotmap(t_board *bd, int player)
 		{
 			if (bd->board[i][j] == '.')
 				bd->hotmap[i][j] = -1;
-			else if (bd->board[i][j] == C_EM(player) ||
-					bd->board[i][j] == C_EM(player) + 'a' - 'A')
+			else if (bd->board[i][j] == pf_ennemy_char(player) ||
+					bd->board[i][j] == pf_ennemy_char(player) + 'a' - 'A')
 				bd->hotmap[i][j] = 0;
-			else if (bd->board[i][j] == C_PL(player) ||
-					bd->board[i][j] == C_PL(player) + 'a' - 'A')
+			else if (bd->board[i][j] == pf_player_char(player) ||
+					bd->board[i][j] == pf_player_char(player) + 'a' - 'A')
 				bd->hotmap[i][j] = -2;
 			j++;
 		}

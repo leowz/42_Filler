@@ -6,13 +6,12 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 12:31:32 by zweng             #+#    #+#             */
-/*   Updated: 2017/12/02 12:35:17 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/09 15:20:43 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# include <stdio.h>
 # include "libft.h"
 # define BUFF_SIZE 32
 # define MAX_FD 2048

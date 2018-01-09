@@ -6,29 +6,29 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 15:52:01 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/08 18:38:03 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/09 20:25:22 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static void	pf_free_board(t_board *board)
+static void	pf_free_board(t_board *bd)
 {
 	int		i;
 
 	i = 0;
-	while (i < board->height)
-		free(board->board[i++]);
-	free(board->board);
-	if (board->hotmap)
+	while (i < bd->height)
+		ft_strdel(&bd->board[i++]);
+	ft_memdel((void **)(&bd->board));
+	if (bd->hotmap)
 	{
 		i = 0;
-		while (i < board->height)
-			free(board->hotmap[i++]);
-		free(board->hotmap);
+		while (i < bd->height)
+			ft_memdel((void **)(&bd->hotmap[i++]));
+		ft_memdel((void **)(&bd->hotmap));
 	}
-	board->width = 0;
-	board->height = 0;
+	bd->width = 0;
+	bd->height = 0;
 }
 
 static void	pf_output_result(t_point res)
@@ -44,9 +44,9 @@ static int	pf_get_player(void)
 	char	*line;
 	int		ret;
 
-	line = 0;
+	line = NULL;
 	ret = 0;
-	get_next_line(STD_IN, &line);
+	get_next_line(STDIN_FILENO, &line);
 	if (line && ft_strstr(line, "$$$ exec") && ft_strstr(line, "zweng.filler"))
 	{
 		if (ft_strstr(line, "p1"))
@@ -54,7 +54,7 @@ static int	pf_get_player(void)
 		else if (ft_strstr(line, "p2"))
 			ret = 2;
 	}
-	free(line);
+	ft_memdel((void **)(&line));
 	return (ret);
 }
 
@@ -62,8 +62,8 @@ static void	pf_init_board(t_board *bd)
 {
 	bd->width = 0;
 	bd->height = 0;
-	bd->board = 0;
-	bd->hotmap = 0;
+	bd->board = NULL;
+	bd->hotmap = NULL;
 }
 
 int			main(void)
