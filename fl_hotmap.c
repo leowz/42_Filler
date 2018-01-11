@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:23:05 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/09 20:18:33 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/11 15:47:25 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,61 +73,4 @@ void		fl_calc_hotmap(t_board *bd)
 			break ;
 		l++;
 	}
-}
-
-static int	pf_calc_piece(t_board *bd, t_board *pi, int m, int n)
-{
-	int		i;
-	int		j;
-	int		flag;
-	int		val;
-
-	i = 0;
-	flag = 0;
-	val = 0;
-	while (i < pi->height)
-	{
-		j = 0;
-		while (j < pi->width)
-		{
-			if (pi->board[i][j] == '*' && (m + i >= bd->height ||
-				n + j >= bd->width || (bd->hotmap[m + i][n + j] == 0)))
-				return (INT_MAX);
-			if (pi->board[i][j] == '*' && bd->hotmap[m + i][n + j] == -2)
-				flag += 1;
-			if (pi->board[i][j] == '*' && bd->hotmap[m + i][n + j] > 0)
-				val += bd->hotmap[m + i][n + j];
-			j++;
-		}
-		i++;
-	}
-	return (flag == 1 ? val : INT_MAX);
-}
-
-int			fl_put_piece(t_board *bd, t_board *pi, t_point *res)
-{
-	int		i;
-	int		j;
-	int		tmp;
-	int		val;
-
-	i = 0;
-	tmp = INT_MAX;
-	while (i < bd->height)
-	{
-		j = 0;
-		while (j < bd->width)
-		{
-			val = pf_calc_piece(bd, pi, i, j);
-			if (val < tmp)
-			{
-				res->x = i;
-				res->y = j;
-				tmp = val;
-			}
-			j++;
-		}
-		i++;
-	}
-	return ((tmp == INT_MAX ? 1 : 0));
 }

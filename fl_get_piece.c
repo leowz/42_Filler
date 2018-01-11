@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 20:14:51 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/09 20:25:57 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/11 16:01:05 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int			fl_get_piece(t_board *pi)
 	while (i < pi->height)
 	{
 		if (!(pi->board[i] = ft_strnew(pi->width)))
-				return (0);
+			return (0);
 		if (get_next_line(STDIN_FILENO, &line))
 		{
 			ft_strncpy(pi->board[i], line, pi->width);

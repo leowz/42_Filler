@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 13:51:27 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/09 20:41:01 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/11 16:05:00 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ static int	pf_alloc_board_map(t_board *bd)
 	while (i < bd->height)
 	{
 		if (!(bd->board[i] = ft_strnew(bd->width)))
-				return (0);
+			return (0);
 		if (!(bd->hotmap[i] = (int *)malloc(sizeof(int) * bd->width)))
-				return (0);
+			return (0);
 		i++;
 	}
 	return (1);
