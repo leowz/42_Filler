@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 15:22:57 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/11 16:00:42 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/11 19:57:32 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,16 @@ int			fl_put_piece(t_board *bd, t_board *pi, t_point *res)
 	int		tmp;
 	int		val;
 
-	i = -pi->height + 1;
 	tmp = INT_MAX;
+	i = -pi->height + 1;
 	while (i < bd->height)
 	{
 		j = -pi->width + 1;
 		while (j < bd->width)
 		{
 			val = pf_calc_piece(bd, pi, i, j);
-			if (val < tmp)
+			if ((val != INT_MAX && tmp == INT_MAX) || (tmp == 0 && val > 0
+						&& val < INT_MAX) || (val > 0 && val < tmp))
 			{
 				res->x = i;
 				res->y = j;
