@@ -6,12 +6,11 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 13:50:34 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/11 20:00:03 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/13 14:44:29 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-#include "helper.h"
 
 static char	pf_ennemy_char(int player)
 {
@@ -54,8 +53,6 @@ int			fl_resolve(t_board *bd, t_board *piece, int player, t_point *res)
 
 	pf_init_hotmap(bd, player);
 	fl_calc_hotmap(bd);
-	//print_hotmap(*bd);
-	//ft_putstr("print hotmap\n");
 	ret = fl_put_piece(bd, piece, res);
 	if (ret == 1)
 	{

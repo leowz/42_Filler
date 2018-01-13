@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 20:14:51 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/11 16:01:05 by zweng            ###   ########.fr       */
+/*   Updated: 2018/01/13 14:46:00 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	pf_get_board_info(t_board *bd)
 			ret = 1;
 		}
 	}
-	free(line);
+	ft_strdel(&line);
 	return (1);
 }
 
