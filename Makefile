@@ -6,7 +6,7 @@
 #    By: zweng <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 18:11:43 by zweng             #+#    #+#              #
-#    Updated: 2018/01/13 14:44:03 by zweng            ###   ########.fr        #
+#    Updated: 2018/04/10 19:55:07 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ LIBSRCS = $(wildcard libft/*.c)
 
 LIBOBJS = $(patsubst %.c, %.o, $(LIBSRCS))
 
-HEADER_DIR = libft
+HEADER_DIR = libft/includes
 
 HEADER = filler.h
 

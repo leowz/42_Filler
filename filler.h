@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 15:52:10 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/09 19:40:21 by zweng            ###   ########.fr       */
+/*   Updated: 2018/04/10 19:55:38 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FILLER_H
 
 # include "libft.h"
-# include "get_next_line.h"
 
 # define BD_CHARS ".oOxX"
 # define C_P1    'O'
