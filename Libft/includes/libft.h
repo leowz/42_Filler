@@ -6,7 +6,7 @@
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 11:44:47 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/09 15:21:28 by zweng            ###   ########.fr       */
+/*   Updated: 2018/03/13 14:26:34 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,26 @@
 # include <stdlib.h>
 # include <string.h>
 
+# define BUFF_SIZE 	(320)
+# define MAX_FD 	(2048)
+# define FUN_SUCS 	(1)
+# define FUN_FAIL	(0)
+
 typedef struct		s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_fd
+{
+	int				open_flag;
+	size_t			bytes_read;
+	char			*buf;
+	size_t			buf_size;
+	int				ret_flag;
+}					t_fd;
 
 char				*ft_strcat(char *s1, const char *s2);
 void				*ft_memset(void *b, int c, size_t len);
@@ -89,4 +103,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstappend(t_list **alst, t_list *node);
 void				ft_lstprint(t_list *alst);
+int					ft_abs(int n);
+size_t				ft_lstsize(t_list *lst);
+int					get_next_line(const int fd, char **line);
 #endif

@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zweng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/18 12:31:32 by zweng             #+#    #+#             */
-/*   Updated: 2018/01/09 15:20:43 by zweng            ###   ########.fr       */
+/*   Created: 2018/01/12 19:38:37 by zweng             #+#    #+#             */
+/*   Updated: 2018/01/12 19:39:19 by zweng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "libft.h"
-# define BUFF_SIZE 32
-# define MAX_FD 2048
+#include "libft.h"
 
-typedef struct	s_fd
+int			ft_abs(int n)
 {
-	int			fd;
-	int			open_flag;
-	size_t		bytes_read;
-	char		*buf;
-	size_t		buf_size;
-	int			ret_flag;
-}				t_fd;
-
-int				get_next_line(const int fd, char **line);
-#endif
+	return (n < 0 ? -n : n);
+}
