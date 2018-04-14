@@ -6,7 +6,7 @@
 #    By: zweng <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 18:11:43 by zweng             #+#    #+#              #
-#    Updated: 2018/04/10 19:55:07 by zweng            ###   ########.fr        #
+#    Updated: 2018/04/13 21:06:10 by zweng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,15 +46,14 @@ all: $(NAME)
 
 $(NAME): $(LIBDIR)/$(LIB) $(OBJS)
 	@$(CC) $(OBJS) -L$(LIBDIR)/ -lft -o $@
-	@echo $(GREEN)"Finish linking"$(EOC)
+	@printf $(GREEN)"Finish linking %s\n"$(EOC) $@
 
 $(LIBDIR)/$(LIB): $(LIBSRCS)
 	@make -C $(LIBDIR)/ fclean && make -C $(LIBDIR)/
 
 %.o: %.c $(HEADER)
-	@echo $(GREEN)"Compiling"$(EOC)
 	@$(CC) -c $(CFLAGS) $< -I. -I$(HEADER_DIR) -o $@
-	@echo $(GREEN)"Finish compiling"$(EOC)
+	@printf $(GREEN)"Finish compiling %s\n"$(EOC) $@
 
 clean:
 	@/bin/rm -f $(OBJS) 
