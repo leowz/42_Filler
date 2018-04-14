@@ -21,6 +21,8 @@ If one player cannot place any piece on the board, then he stops there while the
 
 The player who have placed the more pieces on the board wins.
 
+Read filler.en.pdf to learn more details about the game.
+
 ### What's in filler?
 
 There are the project files for the player and a resource directory.
@@ -35,9 +37,11 @@ The difficulte of this stratety is how to discribe the distance of each cell in 
 
 ![heatmap](/res/heatmap.png)  
 
-Using a heatmap which makes the player easier to find the opponent terrirory. And the strategy for the player is to place the piece to the opponent as near as possible.
-
+By giving each cell a value of heat to the opponent territory, can we discribe the distance of each cell. The closer to the opponent the more hot is the cell and vice versa.
+This heatmap makes the player easier to find the cell closest to the opponent territory to place the piece.
 
 ## Example usage
 
+![gif0](/res/fgif0.gif)  
+![gif1](/res/fgif1.gif)  
 
