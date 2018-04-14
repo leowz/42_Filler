@@ -33,7 +33,7 @@ The algorithm used in my player is just a simply greedy algorithm. In every turn
 
 The difficulte of this stratety is how to discribe the distance of each cell in the board to the opponent. And a heatmap is here to help.
 
-![heatmap](/res/heamap.png)  
+![heatmap](/res/heatmap.png)  
 
 Using a heatmap which makes the player easier to find the opponent terrirory. And the strategy for the player is to place the piece to the opponent as near as possible.
 
