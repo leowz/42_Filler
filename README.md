@@ -1,6 +1,7 @@
 # Filler - @42Born2Code
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 ![UnitTest](https://img.shields.io/badge/42UnitTest-pass-blue.svg)
+![42pass](https://img.shields.io/badge/42-pass-brightgreen.svg)
 
 Filler is a project of branch algorithm @42Born2Code. It is also a game of fun to watch and to play with your friend and yourself.
 This is my implementation of a player in this game. My player uses a greedy algorithm with the help of the tool called heat map.
@@ -10,6 +11,7 @@ The performance of my player is pretty impressive though. With very short amount
 * [What is Filler?](#what-is-filler)
 * [What's in Filler?](#whats-in-filler)
 * [Example usage](#example-usage)
+* [Grades](#grades)
 
 ### What is filler?
 Filler is a game. In this game, two players fight against each other, one after the other on a board defined by X * N cells.
@@ -40,7 +42,7 @@ The difficulte of this stratety is how to discribe the distance of each cell in 
 By giving each cell a value of heat to the opponent territory, can we discribe the distance of each cell. The closer to the opponent the more hot is the cell and vice versa.
 This heatmap makes the player easier to find the cell closest to the opponent territory to place the piece.
 
-## Example usage
+### Example usage
 
 From the first gif, we can see that my player(blue) is trying to enclose the opponents as fast as possible.
 ![gif0](/res/fgif0.gif)
@@ -48,3 +50,5 @@ From the first gif, we can see that my player(blue) is trying to enclose the opp
 From the second, we can see that once the opponent is enclosed the game is over.
 ![gif1](/res/fgif1.gif)  
 
+### Grades
+Filler: 100/100
