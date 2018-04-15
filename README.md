@@ -42,7 +42,7 @@ This heatmap makes the player easier to find the cell closest to the opponent te
 
 ## Example usage
 
-From the first gif, we can see that the my player(blue) is trying to enclose the opponents as fast as possible.
+From the first gif, we can see that my player(blue) is trying to enclose the opponents as fast as possible.
 ![gif0](/res/fgif0.gif)
 
 From the second, we can see that once the opponent is enclosed the game is over.
